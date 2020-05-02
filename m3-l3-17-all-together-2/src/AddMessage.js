@@ -19,6 +19,11 @@ class AddMessage extends Component {
 
         //Call the callback function that was passed to this component from ChatWindow
         this.props.onMessage(this.state.message);
+
+        // Clear the input box
+        this.setState(() => ({
+            message: '',
+        }));
     };
 
     render() {
@@ -28,11 +33,11 @@ class AddMessage extends Component {
         <div>
         <form onSubmit={this.handleSubmit} className="input-group">
             <input
-            type="text"
-            className="form-control"
-            value={message}
-            placeholder="Enter your message..."
-            onChange={this.handleInputChange}
+                type="text"
+                className="form-control"
+                value={message}
+                placeholder="Enter your message..."
+                onChange={this.handleInputChange}
             />
             <div className="input-group-append">
             <button className="btn submit-button" disabled={message === ''}>
