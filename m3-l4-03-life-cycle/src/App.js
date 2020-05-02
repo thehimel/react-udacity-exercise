@@ -60,14 +60,20 @@ class Normal2 extends React.Component {
 }
 
 class Normal3 extends React.Component {
-  render() {
-    return (
-      <strong>
-        <span style={{ color: 'red' }}>Normal3: </span>
-        {new Date().getSeconds().toString()}
-      </strong>
-    );
-  }
+
+    // TODO
+    shouldComponentUpdate(){
+        return false;
+    }
+
+    render() {
+        return (
+            <strong>
+            <span style={{ color: 'red' }}>Normal3: </span>
+            {new Date().getSeconds().toString()}
+            </strong>
+        );
+    }
 }
 
 class App extends React.Component {
